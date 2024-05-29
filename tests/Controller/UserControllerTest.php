@@ -73,7 +73,7 @@ class UserControllerTest extends WebTestCase
     public function test_createUser_checkWhenWrongAge()
     {
         $client = static::createClient();
-        $client->request('POST', '/users', [], [], ['CONTENT_TYP' => 'application/json'], '{"nom":"John","age":15}');
+        $client->request('POST', '/users', [], [], ['CONTENT_TYPE' => 'application/json'], '{"nom":"John","age":15}');
         $this->assertEquals(400, $client->getResponse()->getStatusCode());
     }
 
